@@ -44,31 +44,31 @@ window.onload = function() {
 	body.drawImage(Level,0,0,canvas.width,canvas.height);
 	
 	body.beginPath();
-	body.drawImage(playerImages[1],playerImagesX[1],playerImagesY[1],body.width/20 + body.width/10,body.width/20 + body.width/10);	
+	body.drawImage(playerImages[1],playerImagesX[1],playerImagesY[1],canvas.width/10,canvas.width/10);	
 }
 
 
 
 
 function handleOrientation(event) {
-	playerImagesX[0] = event.beta;  // In degree in the range [-180,180]
-	playerImagesY[0] = event.gamma; // In degree in the range [-90,90]
+	playerImagesX[1] = event.beta;  // In degree in the range [-180,180]
+	playerImagesY[1] = event.gamma; // In degree in the range [-90,90]
 
 	// Because we don't want to have the device upside down
 	// We constrain the x value to the range [-90,90]
-	if (playerImagesX[0] >  90) {playerImagesX[0] =  90};
-	if (playerImagesX[0] < -90) {playerImagesX[0] = -90};
+	if (playerImagesX[1] >  90) {playerImagesX[0] =  90};
+	if (playerImagesX[1] < -90) {playerImagesX[0] = -90};
 
 	// To make computation easier we shift the range of x and y to [0,180]
-	playerImagesX[0] += 90;
-	playerImagesY[0] += 90;
+	playerImagesX[1] += 90;
+	playerImagesY[1] += 90;
 	
 	body.beginPath();
 	body.clearRect(0,0,canvas.width,canvas.height);
-	body.drawImage(Level,0,0,body.width,body.height);
+	body.drawImage(Level,0,0,canvas.width,canvas.height);
 	
 	body.beginPath();
-	body.drawImage(playerImages[1],playerImagesX[1],playerImagesY[1],body.width/20,body.width/20);
+	body.drawImage(playerImages[1],playerImagesX[1],playerImagesY[1],canvas.width/20,canvas.width/20);
 }
 
 
