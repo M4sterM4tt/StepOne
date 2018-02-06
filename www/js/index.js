@@ -51,8 +51,8 @@ window.onload = function() {
 
 
 function handleOrientation(event) {
-	playerImagesX[1] = event.beta;  // In degree in the range [-180,180]
-	playerImagesY[1] = event.gamma; // In degree in the range [-90,90]
+	playerImagesX[1] = event.gamma;  // In degree in the range [-180,180]
+	playerImagesY[1] = event.beta; // In degree in the range [-90,90]
 
 	// Because we don't want to have the device upside down
 	// We constrain the x value to the range [-90,90]
